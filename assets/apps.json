@@ -1,0 +1,36 @@
+{
+    "apps":
+    [
+        {
+            "name": "World Speed Quiz",
+            "description": "A geography quiz app that tests your knowledge around the globe.",
+            "link": "https://play.google.com/store/apps/details?id=com.stavbi1.worldspeedquiz"
+        },
+        {
+            "name": "Gym PR Tracker",
+            "description": "An app to track personal records in various gym exercises.",
+            "link": "https://play.google.com/store/apps/details?id=com.stavb.gymprtracker"
+        },
+        {
+            "name": "Sun Tan Tracker",
+            "description": "An app to monitor and optimize your sun exposure for a perfect tan.",
+            "link": "https://play.google.com/store/apps/details?id=com.stavbi1.suntantracker"
+        },
+        {
+            "name": "Habit Dice",
+            "description": "An app that uses dice rolls to help you build and maintain good habits.",
+            "link": "https://play.google.com/store/apps/details?id=com.stavbi1.habitdice"
+        },
+        {
+            "name": "CS Mastery: Data Structures",
+            "description": "An educational app focused on mastering data structures using lessons, flashcards, and quizzes.",
+            "link": "https://play.google.com/store/apps/details?id=com.stavbi1.csmasterydatastructures"
+        },
+        {
+            "name": "CS Mastery: Algorithms",
+            "description": "An educational app focused on mastering algorithms using lessons, flashcards, and quizzes.",
+            "link": "https://play.google.com/store/apps/details?id=com.stavbi1.csmasteryalgorithms"
+        }
+    ]
+}
+    
