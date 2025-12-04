@@ -21,11 +21,10 @@ async function loadApps() {
       appsGrid.appendChild(card);
     });
 
-    // Add stagger animation
-    const cards = document.querySelectorAll(".app-card");
-    cards.forEach((card, index) => {
-      card.style.animation = `fadeInUp 0.5s ease-out ${index * 0.1}s both`;
-    });
+    // Setup staggered fade-in animation for app cards
+    setTimeout(() => {
+      setupAppCardsAnimation();
+    }, 100);
   } catch (error) {
     console.error("Error loading apps:", error);
     appsGrid.innerHTML =
@@ -147,31 +146,74 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-});
 
-// Add intersection observer for scroll animations
-if ("IntersectionObserver" in window) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = "1";
-          entry.target.style.transform = "translateY(0)";
-        }
-      });
-    },
-    {
-      threshold: 0.1,
-    }
+  // Add fade-in class to all elements that should animate
+  const animateElements = document.querySelectorAll(
+    ".service-card, .portfolio-showcase, .contact-cta, .section-title, .section-subtitle, #apps-grid"
   );
 
-  // Observe elements when they're added to the DOM
-  const observeElements = () => {
-    document.querySelectorAll(".app-card").forEach((card) => {
-      observer.observe(card);
-    });
+  animateElements.forEach((el) => {
+    el.classList.add("fade-in");
+  });
+
+  // Setup Intersection Observer for fade-in animations
+  setupScrollAnimations();
+});
+
+// Setup scroll-based fade-in animations
+function setupScrollAnimations() {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -100px 0px",
   };
 
-  // Call after a short delay to ensure cards are loaded
-  setTimeout(observeElements, 500);
+  // Standard observer for most elements
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Observe all fade-in elements
+  document.querySelectorAll(".fade-in").forEach((el) => {
+    observer.observe(el);
+  });
+}
+
+// Setup staggered animation for app cards
+function setupAppCardsAnimation() {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -100px 0px",
+  };
+
+  const appCards = document.querySelectorAll(".app-card");
+
+  // Add fade-in class to all app cards
+  appCards.forEach((card) => {
+    card.classList.add("fade-in");
+  });
+
+  // Observer for the first app card to trigger all animations
+  const appCardsObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Trigger staggered animation for all cards
+        appCards.forEach((card, index) => {
+          setTimeout(() => {
+            card.classList.add("visible");
+          }, index * 150);
+        });
+        appCardsObserver.disconnect();
+      }
+    });
+  }, observerOptions);
+
+  // Observe the first app card
+  if (appCards.length > 0) {
+    appCardsObserver.observe(appCards[0]);
+  }
 }
