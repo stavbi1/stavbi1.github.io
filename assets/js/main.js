@@ -46,6 +46,8 @@ function createAppCard(app, index) {
     "CS Mastery: Data Structures": "cs-mastery-data-structures.png",
     "CS Mastery: Algorithms": "cs-mastery-algorithms.png",
     "World Speed Quiz": "world-speed-quiz.png",
+    "Typing Speed Test": "typing-speed-test.png",
+    "QR Scanner": "qr-scanner.png",
   };
 
   const imageName = imageMap[app.name] || "default.png";

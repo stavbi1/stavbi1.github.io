@@ -20,11 +20,6 @@ if ! command -v bundle &> /dev/null; then
     gem install bundler
 fi
 
-# Install dependencies if needed
-if [ ! -d "vendor/bundle" ] && [ ! -f ".bundle/config" ]; then
-    echo "📦 Installing dependencies..."
-    bundle install
-fi
 
 # Start Jekyll server
 echo "✨ Starting Jekyll server at http://localhost:4000"
