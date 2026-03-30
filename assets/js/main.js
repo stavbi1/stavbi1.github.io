@@ -48,6 +48,7 @@ function createAppCard(app, index) {
     "World Speed Quiz": "world-speed-quiz.png",
     "Typing Speed Test": "typing-speed-test.png",
     "QR Scanner": "qr-scanner.png",
+    "Idle Forest Evolution": "idle-forest-evolution.png",
   };
 
   const imageName = imageMap[app.name] || "default.png";
