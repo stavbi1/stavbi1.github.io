@@ -19,7 +19,7 @@ if ! command -v bundle &> /dev/null; then
     echo "📦 Bundler not found. Installing..."
     gem install bundler
 fi
-
+t
 
 # Start Jekyll server
 echo "✨ Starting Jekyll server at http://localhost:4000"

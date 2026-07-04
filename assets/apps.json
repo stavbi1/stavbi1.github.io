@@ -1,6 +1,11 @@
 {
   "apps": [
     {
+      "name": "Tower Defense Clashes",
+      "description": "A strategic tower defense game where you build defenses and clash against waves of enemies.",
+      "link": "https://play.google.com/store/apps/details?id=com.stavbi1.towerdefenseclashes"
+    },
+    {
       "name": "Idle Forest Evolution",
       "description": "A relaxing idle game where you grow and evolve a forest ecosystem over time.",
       "link": "https://play.google.com/store/apps/details?id=com.stavbi1.zenforest"

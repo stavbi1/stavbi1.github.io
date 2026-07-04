@@ -49,6 +49,7 @@ function createAppCard(app, index) {
     "Typing Speed Test": "typing-speed-test.png",
     "QR Scanner": "qr-scanner.png",
     "Idle Forest Evolution": "idle-forest-evolution.png",
+    "Tower Defense Clashes": "tower-defense-clashes.webp",
   };
 
   const imageName = imageMap[app.name] || "default.png";
